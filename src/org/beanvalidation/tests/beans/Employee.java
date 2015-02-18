@@ -11,14 +11,19 @@ public class Employee {
     @NotNull
     private String name;
 
-    @Email
-    private String email;
+    private LoginCredintials loginCredintials;
 
-    @Password(message = "PASSWORD HAS TO BE AT LEAST 3 CHARS LONG")
-    private String password;
 
     @MobilePhone
     private String phone;
+
+    public LoginCredintials getLoginCredintials() {
+        return loginCredintials;
+    }
+
+    public void setLoginCredintials(LoginCredintials loginCredintials) {
+        this.loginCredintials = loginCredintials;
+    }
 
     @Range(min = 18, max = 50, message = "AGE HAS TO BE BETWEEN 18 AND 50")
     private int age;
@@ -32,8 +37,6 @@ public class Employee {
 
     public Employee(String name, String email, String password, String phone, String hireDate) {
         this.name = name;
-        this.email = email;
-        this.password = password;
         this.phone = phone;
         this.hireDate = hireDate;
     }
@@ -44,22 +47,6 @@ public class Employee {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getPhone() {
